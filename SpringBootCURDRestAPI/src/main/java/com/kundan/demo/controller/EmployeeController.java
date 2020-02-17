@@ -1,12 +1,9 @@
 package com.kundan.demo.controller;
 
 import java.util.List;
-import java.util.Map;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,38 +26,34 @@ public class EmployeeController {
 	/* To save an employee*/
 	@PostMapping("/save")
 	public Employee createEmployee(@Valid @RequestBody Employee emp) {
-		return employeeService.saveEmployee(emp);
+		return employeeService.save(emp);
 	}
 	
 	/* Get all employee */
 	@GetMapping("/getAll")
 	public List<Employee> getAllEmployees(){
-		return employeeService.getAllEmployee();
+		return employeeService.findAll();
 	}
 
 	/* Get an employee by id*/
 	@GetMapping("/fetch/{id}")
 	public Employee getEmployeeByIds(@PathVariable(value = "id")Long empId)throws ResourceNotFoundException {
-		return employeeService.getEmployeeById(empId).orElseThrow(() -> new ResourceNotFoundException("User not found :: " + empId));
+		return employeeService.findById(empId).orElseThrow(() -> new ResourceNotFoundException("User not found :: " + empId));
 	}
 	
 	/* Update an employee by id*/
 	@PutMapping("/update/{id}")
-	public ResponseEntity<Employee> updateEmployee(@PathVariable(value = "id") Long empId, @Valid @RequestBody Employee employee) throws ResourceNotFoundException{
-		Employee emp=employeeService.getEmployeeById(empId).orElseThrow(() -> new ResourceNotFoundException("User not found :: " + empId));
-		emp.setFirstName(employee.getFirstName());
-		emp.setLastName(employee.getLastName());
-		emp.setEmail(employee.getEmail());
-		final Employee updatedEmployee=employeeService.saveEmployee(emp);
-		return ResponseEntity.ok(updatedEmployee);
+	public Employee updateEmployee(@PathVariable(value = "id") Long empId, @Valid @RequestBody Employee employee) throws ResourceNotFoundException{
+		return employeeService.update(empId,employee).orElseThrow(() -> new ResourceNotFoundException("User not found :: " + empId));
+		
 		
 	}
 	
 	/* Delete an employee by id*/
 	@DeleteMapping("/delete/{id}")
-	public Map<String,Boolean> deleteEmployeeById(@PathVariable(value = "id")Long empId) throws ResourceNotFoundException {
-		Employee employee=employeeService.getEmployeeById(empId).orElseThrow(() -> new ResourceNotFoundException("User not found :: " + empId));
-		return employeeService.deleteEmployee(employee);		
+	public void deleteEmployeeById(@PathVariable(value = "id")Long empId) throws ResourceNotFoundException {
+	//	Employee employee=employeeService.findById(empId).orElseThrow(() -> new ResourceNotFoundException("User not found :: " + empId));
+		employeeService.delete(employeeService.findById(empId).orElseThrow(() -> new ResourceNotFoundException("User not found :: " + empId)));		
 	}
 	
 }
