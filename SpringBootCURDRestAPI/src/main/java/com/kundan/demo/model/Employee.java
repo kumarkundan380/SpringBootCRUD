@@ -25,17 +25,20 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name="firstname")
+	@Column(name="first_name")
 	@NotBlank
 	private String firstName;
 	
-	@Column(name="LastName")
+	@Column(name="last_name")
 	@NotBlank
 	private String lastName;
 	
-	@Column(name="Email")
+	@Column(name="email")
 	@NotBlank
 	private String email;
+	
+	@Column(name="image_name")
+	private String imageName;
 	
 	@Column(name="CreatedAt")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -81,11 +84,21 @@ public class Employee {
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+	
+	public String getImageName() {
+		return imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+	}
 
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", createdAt=" + createdAt + "]";
+				+ ", imageName=" + imageName + ", createdAt=" + createdAt + "]";
 	}
+
+	
 	
 }

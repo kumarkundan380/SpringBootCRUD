@@ -3,6 +3,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import java.util.stream.Stream;
@@ -24,6 +26,9 @@ class SpringBootCurdRestApiApplicationTests {
 	
 	@MockBean
 	private EmployeeRepository employeeRepository;
+	
+//	@MockBean
+//	private EmployeeService employeeService;
 
 	@Test
 	public void findAllTest()
@@ -56,8 +61,10 @@ class SpringBootCurdRestApiApplicationTests {
 		employee.setFirstName("Kundan");
 		employee.setLastName("Kumar");
 		employee.setEmail("kumarkundan380@gmail.com");
-		employeeServiceImpl.findById(id);
-		verify(employeeRepository,times(1)).findById(id);
+		Optional<Employee> emp=Optional.of(employee);
+		when(employeeRepository.findById(id)).thenReturn(emp);
+		Optional<Employee> e=employeeServiceImpl.findById(id);
+		assertEquals(emp,e);
 	}
 //	@Test
 //	public void updateTest()
@@ -67,9 +74,12 @@ class SpringBootCurdRestApiApplicationTests {
 //		employee.setFirstName("Kundan");
 //		employee.setLastName("Kumar");
 //		employee.setEmail("kumarkundan380@gmail.com");
-//		
-//		employeeServiceImpl.update(id,employee);
-//		verify(employeeRepository,times(1)).update(id,employee);
+//		Optional<Employee> emp=Optional.of(employee);
+//		when(employeeService.update(id,employee)).thenReturn(emp);
+//		Optional<Employee> e=employeeServiceImpl.update(id,employee);
+//		assertEquals(emp,e);
+////		employeeServiceImpl.update(id,employee);
+////		verify(employeeRepository,times(1)).update(id,employee);
 //	}
 	
 	@Test

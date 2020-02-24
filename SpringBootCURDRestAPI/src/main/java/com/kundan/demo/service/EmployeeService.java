@@ -1,7 +1,12 @@
 package com.kundan.demo.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.kundan.demo.model.Employee;
 
 public interface EmployeeService{
@@ -18,5 +23,8 @@ public interface EmployeeService{
 	
 	public void delete(Employee employee);
 	
+	public MultipartFile uploadeImage(MultipartFile file);
+	
+	public ResponseEntity<Map<String,String>> getImage();
 }
 
