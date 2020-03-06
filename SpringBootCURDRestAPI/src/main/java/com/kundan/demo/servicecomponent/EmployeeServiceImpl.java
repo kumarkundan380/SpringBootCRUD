@@ -46,6 +46,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	@Override
 	public Optional<Employee> update(Long empId,Employee employee) {
+	
 		   Employee emp=employeeRepository.findById(empId).get();
 		   emp.setFirstName(employee.getFirstName());
 		   emp.setLastName(employee.getLastName());
@@ -69,7 +70,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 		try {
 		Files.write(path,file.getBytes());
 		} catch (IOException e) {
-		// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -97,7 +97,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 						fileInputStream.close();
 					} 
 					catch (Exception e) {
-		// TODO: handle exception
+						e.printStackTrace();
 					}
 				}
 			}

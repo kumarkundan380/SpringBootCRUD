@@ -1,0 +1,40 @@
+2020-03-01 10:53:16.389  INFO 2307 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-01 10:53:16.442  INFO 2307 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-01 10:53:16.643  INFO 2307 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-03-01 10:53:16.690  INFO 2307 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-03-01 10:53:24.235  INFO 16631 --- [restartedMain] com.kundan.demo.LoggerApplication        : Starting LoggerApplication on kundan-u18 with PID 16631 (/home/kundan/myProjet/SpringWorksapce/LoggerApplication/target/classes started by kundan in /home/kundan/myProjet/SpringWorksapce/LoggerApplication)
+2020-03-01 10:53:24.239 DEBUG 16631 --- [restartedMain] com.kundan.demo.LoggerApplication        : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-01 10:53:24.239  INFO 16631 --- [restartedMain] com.kundan.demo.LoggerApplication        : No active profile set, falling back to default profiles: default
+2020-03-01 10:53:24.329  INFO 16631 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /home/kundan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/home/kundan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/home/kundan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/home/kundan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/home/kundan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/home/kundan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/home/kundan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-03-01 10:53:24.330  INFO 16631 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-01 10:53:24.330  INFO 16631 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-01 10:53:26.359  INFO 16631 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-01 10:53:26.425  INFO 16631 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36ms. Found 0 JPA repository interfaces.
+2020-03-01 10:53:28.340  INFO 16631 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-01 10:53:28.371  INFO 16631 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-01 10:53:28.371  INFO 16631 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-01 10:53:28.499  INFO 16631 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-01 10:53:28.499  INFO 16631 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4168 ms
+2020-03-01 10:53:29.196  INFO 16631 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-01 10:53:29.265  INFO 16631 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-01 10:53:29.570  INFO 16631 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-01 10:53:29.717  INFO 16631 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-01 10:53:30.729  INFO 16631 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-01 10:53:30.843  INFO 16631 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-01 10:53:31.411  INFO 16631 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-01 10:53:31.471  INFO 16631 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-01 10:53:31.511  INFO 16631 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-01 10:53:31.598  WARN 16631 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-01 10:53:31.824  INFO 16631 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-01 10:53:32.141  INFO 16631 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c5ccf9f7-ed41-40b2-8d8b-3e0f3924907c
+
+2020-03-01 10:53:32.243  INFO 16631 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44ab543d, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f4ede6b, org.springframework.security.web.header.HeaderWriterFilter@7713b4da, org.springframework.security.web.csrf.CsrfFilter@100873ca, org.springframework.security.web.authentication.logout.LogoutFilter@33c79686, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4371cf32, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1cfb3555, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@9910940, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@a4a2a9e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4bdb1624, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ff753a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24c23db6, org.springframework.security.web.session.SessionManagementFilter@3481aecf, org.springframework.security.web.access.ExceptionTranslationFilter@3219405a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@624bd572]
+2020-03-01 10:53:32.338  INFO 16631 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-03-01 10:53:32.427  INFO 16631 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-01 10:53:32.429  INFO 16631 --- [restartedMain] com.kundan.demo.LoggerApplication        : Started LoggerApplication in 9.74 seconds (JVM running for 13.366)
+2020-03-01 10:53:35.392  INFO 16631 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-01 10:53:35.394  INFO 16631 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-01 10:53:35.403  INFO 16631 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-03-01 10:53:35.425  INFO 16631 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

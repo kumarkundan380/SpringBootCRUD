@@ -27,6 +27,9 @@ import com.kundan.demo.model.Profile;
 import com.kundan.demo.repository.ProfileRepository;
 import com.kundan.demo.service.ProfileService;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Service
 public class ProfileServiceImpl implements ProfileService{
 	

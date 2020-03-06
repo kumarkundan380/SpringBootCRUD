@@ -35,13 +35,11 @@ public class EmployeeController {
 	/* To save an employee*/
 	@PostMapping("/save")
 	public Employee createEmployee(@Valid @RequestBody Employee emp) {
-		System.out.println("first");
 		return employeeService.save(emp);
 	}
 	
 	/* Get all employee */
 	@GetMapping("/getAll")
-	
 	public List<Employee> getAllEmployees(){
 		return employeeService.findAll();
 	}
