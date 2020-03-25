@@ -36,6 +36,8 @@ public class ProfileServiceImpl implements ProfileService{
 	@Autowired
 	private ProfileRepository profileRepository;
 	
+	@Getter
+	@Setter
 	private String imageName;
 	
 	public static final Logger LOGGER=org.slf4j.LoggerFactory.getLogger(ProfileServiceImpl.class);
@@ -154,19 +156,12 @@ public class ProfileServiceImpl implements ProfileService{
 			
 		profileRepository.save(profile);
 		return  Optional.of(profile);
-//		return Optional.of(profileRepository.save(profile));
 	}
-
-//	@Override
-//	public void delete(Profile profile) {
-//		
-//		LOGGER.info("Delete method is call");
-//		profileRepository.delete(profile);
-//		
-//	}
 
 	@Override
 	public ResponseEntity<Profile> delete(@PathVariable(value="id") int id){
+		
+		LOGGER.info("Delete method is call");
 		Profile profile=profileRepository.findById(id).get();
 		if(profile==null) {
 			return ResponseEntity.notFound().build();
@@ -181,7 +176,7 @@ public class ProfileServiceImpl implements ProfileService{
 		LOGGER.info("Upload Image method is call");
 		
 		String folder="/home/kundan/Desktop/Image/";
-		imageName=file.getOriginalFilename();
+		setImageName(file.getOriginalFilename());
 		Path path=Paths.get(folder+file.getOriginalFilename());
 		try {
 		Files.write(path,file.getBytes());
